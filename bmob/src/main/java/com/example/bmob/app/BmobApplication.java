@@ -2,9 +2,8 @@ package com.example.bmob.app;
 
 import com.example.bmob.BuildConfig;
 import com.orhanobut.logger.Logger;
-import com.umeng.analytics.MobclickAgent;
 import com.wxq.commonlibrary.util.BuglyUtils;
-import com.wxq.mvplibrary.base.BaseApp;
+import com.wxq.commonlibrary.base.BaseApp;
 
 import cn.bmob.push.BmobPush;
 import cn.bmob.v3.Bmob;
@@ -38,9 +37,6 @@ public class BmobApplication extends BaseApp {
         });
         // 启动推送服务
         BmobPush.startWork(this);
-
-
-
 
         //初始化bugly
         BuglyUtils.init(this,"bf24009ac5", BuildConfig.DEBUG);

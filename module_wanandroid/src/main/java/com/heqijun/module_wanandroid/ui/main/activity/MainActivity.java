@@ -2,7 +2,6 @@ package com.heqijun.module_wanandroid.ui.main.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -15,12 +14,10 @@ import android.widget.FrameLayout;
 
 import com.heqijun.module_wanandroid.R;
 import com.heqijun.module_wanandroid.R2;
-import com.wxq.mvplibrary.base.BaseActivity;
-import com.wxq.mvplibrary.base.BasePresenter;
+import com.wxq.commonlibrary.base.BaseActivity;
+import com.wxq.commonlibrary.base.BasePresenter;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import io.reactivex.functions.Consumer;
 
 public class MainActivity extends BaseActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener,
