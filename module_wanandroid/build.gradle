@@ -12,6 +12,7 @@ android {
         if (rootProject.ext.isWanAndroidApp) {
             applicationId rootProject.ext.android.wanandroidId
         }
+        vectorDrawables.useSupportLibrary = true
     }
     sourceSets {
         main {

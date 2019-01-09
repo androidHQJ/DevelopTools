@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="borderRadius" format="dimension" />
-    <attr name="type">
-        <enum name="circle" value="0" />
-        <enum name="round" value="1" />
-    </attr>
 
     <declare-styleable name="RectImageView">
         <attr name="borderRadius" />
-        <attr name="type" />
+        <attr name="type" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="rect_rounded" value="1" />
+        </attr>
         <!--下面是跟带边有关的属性-->
         <attr name="needBorder" format="boolean"/>
         <attr name="borderWith" format="dimension"/>
