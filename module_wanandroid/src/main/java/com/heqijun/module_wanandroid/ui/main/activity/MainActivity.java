@@ -1,21 +1,29 @@
 package com.heqijun.module_wanandroid.ui.main.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.heqijun.module_wanandroid.R;
 import com.heqijun.module_wanandroid.R2;
+import com.heqijun.module_wanandroid.tools.BottomNavigationViewHelper;
 import com.wxq.commonlibrary.base.BaseActivity;
 import com.wxq.commonlibrary.base.BasePresenter;
+
+import java.lang.reflect.Field;
 
 import butterknife.BindView;
 
@@ -48,9 +56,7 @@ public class MainActivity extends BaseActivity implements
         toolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(toolbar);
 
-        // 以前使用 BottomNavigationViewHelper.disableShiftMode(this) 方法来设置底部图标和字体都显示并去掉点击动画
-        // 升级到 28.0.0 之后，官方重构了 BottomNavigationView ，目前可以使用 labelVisibilityMode = 1 来替代
-        // BottomNavigationViewHelper.disableShiftMode(this)
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
         bottomNavigation.setOnNavigationItemSelectedListener(this);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
@@ -128,6 +134,20 @@ public class MainActivity extends BaseActivity implements
             default:
                 return false;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.wan_menu_activity_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.action_search){
+            showToast("搜索");
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.juziwl.uilibrary.topview;
+package com.wxq.commonlibrary.weiget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.juziwl.uilibrary.R;
+import com.wxq.commonlibrary.R;
 
 /**
  * Created by 王晓清.
