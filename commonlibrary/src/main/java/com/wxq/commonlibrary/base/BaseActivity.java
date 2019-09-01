@@ -11,7 +11,6 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.orhanobut.logger.Logger;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.LifecycleTransformer;
@@ -24,7 +23,6 @@ import com.wxq.commonlibrary.util.RxHelp;
 import com.wxq.commonlibrary.util.StatusBarUtil;
 import com.wxq.commonlibrary.util.ToastUtils;
 import com.wxq.commonlibrary.baserx.Event;
-import com.wxq.commonlibrary.baserx.RxBus;
 import com.wxq.commonlibrary.baserx.RxBusManager;
 import com.wxq.commonlibrary.weiget.DialogManager;
 import com.wxq.commonlibrary.weiget.TopBarHeard;
@@ -88,8 +86,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         initBroadcastAndLocalBroadcastAction();
         // 注册rxbus
         initRxBus();
-        // arouter 依赖注入
-        ARouter.getInstance().inject(this);
     }
 
     private void initRxBus() {
@@ -118,7 +114,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
      */
     protected void setStatusBar() {
         StatusBarUtil.setStatusBarDarkMode(getWindow(), true);
-        StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.white), 0);
+        StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.common_white), 0);
     }
 
     protected abstract void initViews();

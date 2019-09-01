@@ -10,11 +10,6 @@ import android.os.Environment;
 
 public class GlobalContent {
 
-    /**
-     * 是否登录,家长版需要，暂时设置成true，默认是false
-     */
-    public static boolean isLogin = true;
-    public static final String ENCODING = "UTF-8";
     public static String filePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DevelopTools/";
 
     /**
@@ -31,7 +26,6 @@ public class GlobalContent {
      * 课件保存路径
      */
     public static String COURSEWARE = filePath + "courseware/";
-
 
     /**
      * 图片保存路径

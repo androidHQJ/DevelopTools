@@ -1,3 +1,1 @@
-include ':app', ':commonlibrary',
-        ':uilibrary',
-        ':picture_library', ':photoview',':ijkplayerlib'
+include ':app', ':commonlibrary'

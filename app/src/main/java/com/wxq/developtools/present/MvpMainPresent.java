@@ -1,5 +1,6 @@
 package com.wxq.developtools.present;
 
+import com.wxq.commonlibrary.base.RxPresenter;
 import com.wxq.developtools.contract.MvpMainContract;
 
 /**

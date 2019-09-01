@@ -1,6 +1,7 @@
-package android.support.v4.content;
+package content;
 
 import android.support.annotation.Keep;
+import android.support.v4.content.FileProvider;
 
 /**
  * <pre>

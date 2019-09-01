@@ -1,13 +1,9 @@
 package com.wxq.commonlibrary.base;
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
-import android.util.Log;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.facebook.stetho.Stetho;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
-import com.tencent.bugly.beta.Beta;
 import com.wxq.commonlibrary.util.AppManager;
 import com.wxq.commonlibrary.util.FileLogAdapter;
 import com.wxq.commonlibrary.util.Utils;
@@ -40,10 +36,6 @@ public abstract class BaseApp extends Application implements Thread.UncaughtExce
         initLog();
         Stetho.initializeWithDefaults(this);
         Thread.setDefaultUncaughtExceptionHandler(this);
-        // 打印日志
-        ARouter.openLog();
-        ARouter.openDebug();
-        ARouter.init(this);
         //通过反射调用其他application
         applicationDelegate.onCreate(this);
     }
