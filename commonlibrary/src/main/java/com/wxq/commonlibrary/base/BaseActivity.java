@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +18,10 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.trello.rxlifecycle2.android.ActivityEvent;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.umeng.analytics.MobclickAgent;
+import com.wxq.commonlibrary.R;
 import com.wxq.commonlibrary.util.AppManager;
 import com.wxq.commonlibrary.util.RxHelp;
+import com.wxq.commonlibrary.util.StatusBarUtil;
 import com.wxq.commonlibrary.util.ToastUtils;
 import com.wxq.commonlibrary.baserx.Event;
 import com.wxq.commonlibrary.baserx.RxBus;
@@ -39,7 +42,6 @@ import io.reactivex.subjects.BehaviorSubject;
  */
 
 public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatActivity implements BaseView {
-    public String token = "";
     private Unbinder unbinder;
     Disposable disposable;
     public T mPresenter;
@@ -72,15 +74,16 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         }
         unbinder = ButterKnife.bind(this);
         context = this;
+        if (isSetStatusBar()) {
+            setStatusBar();
+        }
         lifecycleSubject.onNext(ActivityEvent.CREATE);
         AppManager.getInstance().addActivity(this);
         rxPermissions = new RxPermissions(this);
         initViews();
         mPresenter = initPresent();
         //数据初始化
-        if (mPresenter != null) {
-            mPresenter.initEventAndData();
-        }
+        initEventAndData();
         //注册广播
         initBroadcastAndLocalBroadcastAction();
         // 注册rxbus
@@ -106,7 +109,21 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         });
     }
 
+    protected boolean isSetStatusBar() {
+        return false;
+    }
+
+    /**
+     * 设置顶部状态栏背景色
+     */
+    protected void setStatusBar() {
+        StatusBarUtil.setStatusBarDarkMode(getWindow(), true);
+        StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.white), 0);
+    }
+
     protected abstract void initViews();
+
+    protected abstract void initEventAndData();
 
     protected abstract int attachLayoutRes();
 
@@ -177,6 +194,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         if (disposable != null) {
             disposable.dispose();
         }
+        if (unbinder!=null){
+            unbinder.unbind();
+        }
         super.onDestroy();
     }
 
@@ -207,9 +227,8 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
     }
 
     public boolean isNeedHeardLayout() {
-        return   true;
+        return  true;
     }
-
 
     @Override
     protected void onResume() {
@@ -223,10 +242,10 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         MobclickAgent.onPause(this);
     }
 
+
 //    ui相关辅助操作
     public void click(View view, Consumer<Object> consumer){
         RxHelp.click(view,consumer);
     }
-
 
 }

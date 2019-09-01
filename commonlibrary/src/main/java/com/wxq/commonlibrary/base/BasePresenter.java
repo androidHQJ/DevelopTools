@@ -10,8 +10,6 @@ public interface BasePresenter<T extends BaseView>{
 
     void attachView(T view);
 
-    void initEventAndData();
-
     void detachView();
 
     //将网络请求的每一个disposable添加进入CompositeDisposable，再退出时候一并注销

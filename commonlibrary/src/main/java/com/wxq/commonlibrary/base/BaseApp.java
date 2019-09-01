@@ -27,9 +27,7 @@ public abstract class BaseApp extends Application implements Thread.UncaughtExce
         super.attachBaseContext(base);
         applicationDelegate = new ApplicationDelegate();
         applicationDelegate.attachBaseContext(base);
-        MultiDex.install(this);
-//         安装tinker
-        Beta.installTinker();
+//        MultiDex.install(this);
     }
 
     @Override
@@ -51,10 +49,7 @@ public abstract class BaseApp extends Application implements Thread.UncaughtExce
     }
 
     //初始化简单的app全局的dragger
-    private void initDagger() {
-
-
-    }
+    private void initDagger() {}
 
 //    private void initX5WebView() {
 //        try {
@@ -123,7 +118,7 @@ public abstract class BaseApp extends Application implements Thread.UncaughtExce
         super.onLowMemory();
 
     }
-    // 程序在内存清理的时候执行
+
     /**
      * 程序在内存清理的时候执行
      */

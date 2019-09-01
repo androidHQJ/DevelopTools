@@ -20,22 +20,17 @@ public  abstract  class RxPresenter<T extends BaseView> implements BasePresenter
         attachView(view);
     }
 
-
     protected void unSubscribe() {
         if (mCompositeDisposable != null) {
             mCompositeDisposable.clear();
         }
     }
 
-    Context mContext;
-
     @Override
     public void attachView(T view) {
         mView=view;
 
     }
-
-
 
     @Override
     public void detachView() {

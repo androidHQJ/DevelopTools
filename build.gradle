@@ -10,15 +10,10 @@ buildscript {
         maven { url 'https://maven.google.com' }
         mavenCentral()
         mavenLocal()
-        maven { url 'http://developer.huawei.com/repo/' }
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/releases/' }
-        maven { url 'https://dl.bintray.com/polyv/android' }
         maven { url "https://dl.google.com/dl/android/maven2" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
         maven { url "https://jitpack.io" }
-        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
-
+//        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
         maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 
@@ -27,14 +22,10 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0' // add plugin
-        classpath "com.tencent.bugly:tinker-support:1.1.1"
         //可以持续跟踪和报告构建时间的插件
-        classpath "net.rdrei.android.buildtimetracker:gradle-plugin:0.11.+"
+//        classpath "net.rdrei.android.buildtimetracker:gradle-plugin:0.11.+"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
-
-    
-
 
 }
 
@@ -46,14 +37,11 @@ allprojects {
         maven { url 'https://maven.google.com' }
         mavenCentral()
         mavenLocal()
-        maven { url 'http://developer.huawei.com/repo/' }
-        maven {url 'http://maven.aliyun.com/nexus/content/repositories/releases/'}
-        maven {url 'https://dl.bintray.com/polyv/android'}
         maven { url "https://dl.google.com/dl/android/maven2" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
         maven { url "https://jitpack.io" }
-        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
+        //Bmob后端云
+//        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
 
         maven { url 'https://dl.bintray.com/umsdk/release' }
     }

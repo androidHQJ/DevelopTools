@@ -33,7 +33,7 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api rootProject.ext.deps["flowlayout"]
-    api rootProject.ext.deps["photoview"]
+//    api rootProject.ext.deps["photoview"]
     api rootProject.ext.deps["nineoldandroids"]
     api rootProject.ext.deps["ijkplayer-java"]
     api rootProject.ext.deps["recyclerview-v7"]
@@ -42,6 +42,6 @@ dependencies {
     api rootProject.ext.deps["design"]
     api rootProject.ext.deps["BaseRecyclerViewAdapterHelper"]
     api rootProject.ext.deps["recyclerview-animators"]
-    api project(path: ':picture_library')
-    implementation project(':commonlibrary')
+//    api project(path: ':picture_library')
+    api project(':commonlibrary')
 }

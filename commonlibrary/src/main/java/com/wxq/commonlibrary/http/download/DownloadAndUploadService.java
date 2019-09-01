@@ -1,6 +1,7 @@
 package com.wxq.commonlibrary.http.download;
 
-import com.wxq.commonlibrary.okgo.response.ResponseData;
+
+import com.wxq.commonlibrary.model.ResponseData;
 
 import java.util.List;
 

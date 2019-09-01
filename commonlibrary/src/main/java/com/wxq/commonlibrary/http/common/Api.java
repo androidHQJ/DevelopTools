@@ -1,7 +1,6 @@
 
 package com.wxq.commonlibrary.http.common;
 
-import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.wxq.commonlibrary.constant.GlobalContent;
 
 import java.util.concurrent.TimeUnit;

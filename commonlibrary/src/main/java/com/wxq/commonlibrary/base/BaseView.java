@@ -20,7 +20,4 @@ public interface BaseView {
 
     void showToast(String message);
 
-
-
-
 }

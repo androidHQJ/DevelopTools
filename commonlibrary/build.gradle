@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 
-greendao{
+greendao {
     schemaVersion 1
     daoPackage 'com.wxq.commonlibrary.dao'
     targetGenDir 'src/main/java'
@@ -71,7 +71,7 @@ dependencies {
     //support基本库依赖
     api rootProject.ext.deps["support-v4"]
     api rootProject.ext.deps["appcompat-v7"]
-    api rootProject.ext.deps["multidex"]
+//    api rootProject.ext.deps["multidex"]
     //butterknife
     api rootProject.ext.deps["butterknife"]
     annotationProcessor rootProject.ext.deps["butterknife-compiler"]
@@ -115,21 +115,16 @@ dependencies {
     api rootProject.ext.deps["okrx2"]
     //arouter
     api rootProject.ext.deps["arouter-api"]
-    annotationProcessor  rootProject.ext.deps["arouter-compiler"]
+    annotationProcessor rootProject.ext.deps["arouter-compiler"]
 
     //greendao
     api rootProject.ext.deps["greendao"]
     api rootProject.ext.deps["GreenDaoUpgradeHelper"]
     //bmob
-    api rootProject.ext.deps["bmob-sdk"]
-    api rootProject.ext.deps["bmob-push"]
+//    api rootProject.ext.deps["bmob-sdk"]
+//    api rootProject.ext.deps["bmob-push"]
 //数据库调试
-//debugCompile 'com.amitshekhar.android:debug
-// -db:1.0.0'
-//    api rootProject.ext.deps["recyclerview-v7"]
-//    api rootProject.ext.deps["cardview-v7"]
-//    api rootProject.ext.deps["constraint-layout"]
-//    api rootProject.ext.deps["design"]
+//debugCompile 'com.amitshekhar.android:debug-db:1.0.0'
 //dagger
 //    provided rootProject.ext.deps["javax.annotation-api"]
 //    api rootProject.ext.deps["dagger"]
