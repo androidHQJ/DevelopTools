@@ -72,15 +72,9 @@ dependencies {
     api rootProject.ext.deps["support-v4"]
     api rootProject.ext.deps["appcompat-v7"]
     api rootProject.ext.deps["design"]
-    api rootProject.ext.deps["flowlayout"]
-    api rootProject.ext.deps["photoview"]
-    api rootProject.ext.deps["nineoldandroids"]
     api rootProject.ext.deps["recyclerview-v7"]
     api rootProject.ext.deps["cardview-v7"]
     api rootProject.ext.deps["constraint-layout"]
-    api rootProject.ext.deps["BaseRecyclerViewAdapterHelper"]
-    api rootProject.ext.deps["recyclerview-animators"]
-
 //    api rootProject.ext.deps["multidex"]
     //butterknife
     api rootProject.ext.deps["butterknife"]

@@ -85,5 +85,5 @@ dependencies {
     //glide
     annotationProcessor rootProject.ext.deps["glide-compiler"]
     //最顶层依赖activity已经封装过 整个架构模式确定结束
-    api project(':commonlibrary')
+    api project(':uilibrary')
 }

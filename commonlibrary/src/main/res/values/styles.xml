@@ -77,5 +77,59 @@
         <item name="android:gravity">center_vertical|center_horizontal</item>
     </style>
 
+    <style name="common_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="common_window_bottom_in_bottom_out">
+        <item name="android:windowEnterAnimation">@anim/common_dialog_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/common_dialog_out_bottom</item>
+    </style>
+    <style name="common_window_left_in_left_out">
+        <item name="android:windowEnterAnimation">@anim/common_dialog_in_left</item>
+        <item name="android:windowExitAnimation">@anim/common_dialog_out_left</item>
+    </style>
+
+    <style name="common_window_right_in_right_out">
+        <item name="android:windowEnterAnimation">@anim/common_dialog_in_right</item>
+        <item name="android:windowExitAnimation">@anim/common_dialog_out_right</item>
+    </style>
+
+    <style name="common_window_top_in_top_out">
+        <item name="android:windowEnterAnimation">@anim/common_dialog_in_top</item>
+        <item name="android:windowExitAnimation">@anim/common_dialog_out_top</item>
+    </style>
+
+    <style name="common_dialog_scale_animstyle">
+        <item name="android:windowEnterAnimation">@anim/common_scale_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/common_scale_dialog_out_anim</item>
+    </style>
+
+    <style name="custom_bottom_in_bottom_out">
+        <item name="android:windowEnterAnimation">@anim/custom_popup_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/custom_popup_anim_out</item>
+    </style>
+
+    <style name="common_textDialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 对话框是否有遮盖 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 
 </resources>
