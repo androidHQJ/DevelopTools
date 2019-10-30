@@ -1,11 +1,11 @@
 package com.wxq.developtools;
-import android.content.Intent;
-import android.os.Process;
 
-import com.umeng.analytics.MobclickAgent;
-import com.wxq.commonlibrary.util.ActivityUtils;
+import com.orhanobut.logger.Logger;
 import com.wxq.commonlibrary.base.BaseApp;
+import com.wxq.commonlibrary.util.L;
 import com.wxq.developtools.activity.MainActivity;
+import com.zxy.recovery.callback.RecoveryCallback;
+import com.zxy.recovery.core.Recovery;
 
 /**
  * Created by Administrator on 2018/6/23 0023.
@@ -17,19 +17,19 @@ public class MyApplication extends BaseApp {
         super.onCreate();
     }
 
+    private void initRecovery() {
+        Recovery.getInstance()
+                .debug(BuildConfig.DEBUG)
+                .recoverStack(true)
+                .mainPage(MainActivity.class)
+                .init(this);
+    }
+
     @Override
     public boolean setIsDebug() {
         return BuildConfig.DEBUG;
     }
 
     @Override
-    public void dealWithException(Thread thread, Throwable throwable, String error) {
-        final Intent intent2 = new Intent();
-        intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent2.setClass(this, MainActivity.class);
-        startActivity(intent2);
-        MobclickAgent.onKillProcess(getApplicationContext());
-        ActivityUtils.finishAllActivitiesExceptNewest();
-        Process.killProcess(Process.myPid());
-    }
+    public void dealWithException(Thread thread, Throwable throwable, String error) {}
 }

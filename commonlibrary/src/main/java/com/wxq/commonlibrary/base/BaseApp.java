@@ -40,9 +40,6 @@ public abstract class BaseApp extends Application implements Thread.UncaughtExce
         applicationDelegate.onCreate(this);
     }
 
-    //初始化简单的app全局的dragger
-    private void initDagger() {}
-
 //    private void initX5WebView() {
 //        try {
 //            QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
@@ -73,14 +70,17 @@ public abstract class BaseApp extends Application implements Thread.UncaughtExce
 
 
     public void initLog() {
-        Logger.init("wxq").logLevel(LogLevel.FULL).logAdapter(new FileLogAdapter()).hideThreadInfo().methodCount(0);
-        Logger.init("wxq").logLevel(LogLevel.FULL);
+        Logger.init("hqj").logLevel(LogLevel.FULL).logAdapter(new FileLogAdapter()).hideThreadInfo().methodCount(0);
+        Logger.init("hqj").logLevel(LogLevel.FULL);
     }
 
 
     @Override
     public void uncaughtException(Thread thread, Throwable throwable) {
-        dealWithException(thread, throwable, throwable.getMessage());
+        if (throwable!=null){
+            Logger.e(throwable.getMessage());
+            dealWithException(thread, throwable, throwable.getMessage());
+        }
     }
 
     public abstract void dealWithException(Thread thread, Throwable throwable, String error);

@@ -114,6 +114,8 @@ dependencies {
     api rootProject.ext.deps["umeng-analytics"]
     api rootProject.ext.deps["umeng-common"]
 
+    api rootProject.ext.deps["recovery"]
+
     //greendao
     api rootProject.ext.deps["greendao"]
     api rootProject.ext.deps["GreenDaoUpgradeHelper"]
