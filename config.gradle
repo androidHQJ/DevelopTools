@@ -39,6 +39,7 @@ ext {
             "recyclerview-v7"           : "com.android.support:recyclerview-v7:${dependVersion.support}",
             "design"                    : "com.android.support:design:${dependVersion.support}",
             "support-v4"                : "com.android.support:support-v4:${dependVersion.support}",
+            "constraint-layout"         : "com.android.support.constraint:constraint-layout:1.1.2",
             "multidex"                  : "com.android.support:multidex:1.0.1",
 
             //glide
@@ -57,10 +58,10 @@ ext {
             "rxlifecycle"               : "com.trello.rxlifecycle2:rxlifecycle:${dependVersion.rxlifecycle}",
             "rxlifecycle-android"       : "com.trello.rxlifecycle2:rxlifecycle-android:${dependVersion.rxlifecycle}",
             "rxlifecycle-components"    : "com.trello.rxlifecycle2:rxlifecycle-components:${dependVersion.rxlifecycle}",
+            //J神的rxRelay2，出现异常仍然可以处理
+            "rxrelay"                   : "com.jakewharton.rxrelay2:rxrelay:2.0.0",
 
             //retrofit
-            "fastjson"                  : "com.alibaba:fastjson:1.1.60.android",
-            "gson"                      : "com.google.code.gson:gson:2.8.5",
             "retrofit"                  : "com.squareup.retrofit2:retrofit:${dependVersion.retrofit}",
             "retrofit-converter-scalars": "com.squareup.retrofit2:converter-scalars:${dependVersion.retrofit}",
             "retrofit-converter-gson"   : "com.squareup.retrofit2:converter-gson:${dependVersion.retrofit}",
@@ -68,88 +69,63 @@ ext {
             "okhttp"                    : "com.squareup.okhttp3:okhttp:${dependVersion.okhttp}",
             "okhttp-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp}",
 
-            //dagger
-            "dagger"                    : "com.google.dagger:dagger:${dependVersion.dagger2}",
-            "dagger-compiler"           : "com.google.dagger:dagger-compiler:${dependVersion.dagger2}",
-            "javax.annotation-api"      : "javax.annotation:javax.annotation-api:1.2",
-
-            //butterknife
-            "butterknife"               : "com.jakewharton:butterknife:${dependVersion.butterknife}",
-            "butterknife-compiler"      : "com.jakewharton:butterknife-compiler:${dependVersion.butterknife}",
-
-            //logger
-            "logger"                    : "com.orhanobut:logger:1.15",
-
-            //blockcanary
-            "blockcanary-android"       : "com.github.markzhai:blockcanary-android:${dependVersion.blockcanary}",
-            "blockcanary-no-op"         : "com.github.markzhai:blockcanary-no-op:${dependVersion.blockcanary}",
-
-            //leakcanary
-            "leakcanary-android"        : "com.squareup.leakcanary:leakcanary-android:${dependVersion.leakcanary}",
-            "leakcanary-android-no-op"  : "com.squareup.leakcanary:leakcanary-android-no-op:${dependVersion.leakcanary}",
-
-            //stetho
-            "stetho"                    : "com.facebook.stetho:stetho:${dependVersion.stetho}",
-            "stetho-okhttp3"            : "com.facebook.stetho:stetho-okhttp3:${dependVersion.stetho}",
-
-            //greendao
-            "greendao"                  : "org.greenrobot:greendao:3.2.0",
-            "GreenDaoUpgradeHelper"     : "com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.2.0",
-
-            //友盟
-            "umeng-analytics"           : "com.umeng.umsdk:analytics:7.5.4",
-            "umeng-common"              : "com.umeng.umsdk:common:1.5.4",
-
-            //nineoldandroidsff
-            "nineoldandroids"           : "com.nineoldandroids:library:2.4.0",
-
-            //工具类集合
-            "utilcode"                  : 'com.blankj:utilcode:1.7.1',
-
             //okgo
             "okgo"                      : "com.lzy.net:okgo:3.0.4",
             "okrx2"                     : "com.lzy.net:okrx2:2.0.2",
 
-            //widget
+            //JSON 解析
+            "fastjson"                  : "com.alibaba:fastjson:1.1.60.android",
+            "gson"                      : "com.google.code.gson:gson:2.8.5",
+
+            //greenDao数据库
+            "greendao"                  : "org.greenrobot:greendao:3.2.0",
+            "GreenDaoUpgradeHelper"     : "com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.2.0",
+
+            //依赖注入
+            "dagger"                    : "com.google.dagger:dagger:${dependVersion.dagger2}",
+            "dagger-compiler"           : "com.google.dagger:dagger-compiler:${dependVersion.dagger2}",
+            "javax.annotation-api"      : "javax.annotation:javax.annotation-api:1.2",
+
+            //View注入框架
+            "butterknife"               : "com.jakewharton:butterknife:${dependVersion.butterknife}",
+            "butterknife-compiler"      : "com.jakewharton:butterknife-compiler:${dependVersion.butterknife}",
+
+            /*****************************UI************************************/
+            //RecyclerView的LayoutManager扩展
             "vlayout"                   : "com.alibaba.android:vlayout:1.0.9@aar",
+            //流式布局
             "flowlayout"                : "com.hyman:flowlayout-lib:1.1.2",
+            //图片裁剪
             "ucrop"                     : "com.github.yalantis:ucrop:2.2.1",
+            //图片预览控件
             "photoview"                 : "com.github.chrisbanes.photoview:library:1.2.4",
-            "xrecyclerview"             : "com.jcodecraeer:xrecyclerview:1.5.9",
-            "pullrefreshlayout"         : "com.yan:pullrefreshlayout:2.2.6",
-            //recycleview动画
+            //图片浏览缩放控件(支持旋转功能)
+            "bmphotoview"               : "com.bm.photoview:library:1.4.1",
+            //RV Item增加和删除的动画动画
             "recyclerview-animators"    : "jp.wasabeef:recyclerview-animators:2.3.0",
-            "constraint-layout"         : "com.android.support.constraint:constraint-layout:1.1.2",
-            //recyclerview左划删除
+            //侧滑(删除)菜单
             "SwipeDelMenuLayout"        : "com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0",
+            //列表item侧滑
+            "swipelayout"               : "com.daimajia.swipelayout:library:1.2.0@aar",
+            //RecyclerAdapter框架
             "BRVAH"                     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:${dependVersion.brvah}",
-
+            //时间选择器、省市区三级联动
             "Android-PickerView"        : "com.contrarywind:Android-PickerView:3.2.7",
-
+            //banner/viewpager
             "banner"                    : "com.youth.banner:banner:1.4.10",
             "bga-banner"                : "cn.bingoogolapple:bga-banner:2.2.6@aar",
             "ultraviewpager"            : "com.alibaba.android:ultraviewpager:1.0.7.8@aar",
+            //MD风格的Dialog
+            "material-dialogs"          : "com.afollestad.material-dialogs:core:3.1.1",
+            //Nifty Modal Dialog Effects
+            "NiftyDialogEffects"        : "com.github.sd6352051:NiftyDialogEffects:v1.0.3",
+            //下拉刷新，上拉加载更多
 
-            //高德地图
-            "amp3d"                     : "com.amap.api:3dmap:5.0.0",
-            "ampLoaction"               : "com.amap.api:location:3.3.0",
-            "ampSearch"                 : "com.amap.api:search:5.0.0",
-            //微信
-            "wechatsdk"                 : "com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.4.0",
 
-            //极光推送
-            "jpush"                     : "cn.jiguang.sdk:jpush:3.1.6",
-            "jcore"                     : "cn.jiguang.sdk:jcore:1.2.5",
-            "JPUSH_HUAWEI_PUSH"         : "cn.jiguang.sdk.plugin:huawei:3.0.9",
-
-            //修改版本号记得修改项目级的build.gradle里的tinkersupport插件的版本号
-            "bugly"                     : "com.tencent.bugly:crashreport_upgrade:1.3.4",
-
+            //事件发布-订阅总线
             "eventbus"                  : "org.greenrobot:eventbus:3.1.1",
-            "netty"                     : "io.netty:netty-all:4.1.9.Final",
-            "guava"                     : "com.google.guava:guava:23.0-android",
 
-            //ijack
+            //基于FFmpeg的轻量级Android/iOS视频播放器
             "ijkplayer-x86"             : "tv.danmaku.ijk.media:ijkplayer-x86:0.8.3",
             "ijkplayer-java"            : "tv.danmaku.ijk.media:ijkplayer-java:0.8.3",
             "ijkplayer-armv7a"          : "tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.3",
@@ -159,28 +135,61 @@ ext {
             "ijkplayer-arm64"           : "tv.danmaku.ijk.media:ijkplayer-arm64:0.8.3",
             "ijkplayer-x86_64"          : "tv.danmaku.ijk.media:ijkplayer-x86_64:0.8.3",
 
+            //工具类集合
+            "utilcode"                  : 'com.blankj:utilcode:1.7.1',
             //二维码
             "zxing"                     : "cn.yipianfengye.android:zxing-library:2.2",
-
-//            debugImplementation 'com.github.whataa:pandora:1.0.0'
-//            releaseImplementation 'com.github.whataa:pandora-no-op:v1.0.0'
-
-            //调试软件
-            "pandora"                   : "com.github.whataa:pandora:1.0.0",
-            "pandora-no-op"             : "com.github.whataa:pandora-no-op:v1.0.0",
-            "debug-db"                  : "com.amitshekhar.android:debug-db:1.0.4",
+            //Google 的基于java1.6的类库集合的扩展项目
+            "guava"                     : "com.google.guava:guava:23.0-android",
+            //运行时Crash自动恢复框架
             "recovery"                  : "com.zxy.android:recovery:0.0.8",
 
-            //J神的rxrelay2，出现异常仍然可以处理
-            "rxrelay"                   : "com.jakewharton.rxrelay2:rxrelay:2.0.0",
+            /*****************************调试工具************************************/
+            //logger
+            "logger"                    : "com.orhanobut:logger:1.15",
+            //在应用内查看和修改包括网络、数据库、UI等的调试工具箱
+            // debugImplementation 'com.github.whataa:pandora:1.0.0'
+            //releaseImplementation 'com.github.whataa:pandora-no-op:v1.0.0'
+            "pandora"                   : "com.github.whataa:pandora:1.0.0",
+            "pandora-no-op"             : "com.github.whataa:pandora-no-op:v1.0.0",
+            //手机数据库调试
+            "debug-db"                  : "com.amitshekhar.android:debug-db:1.0.4",
+            //使用chrome的inspect功能，对Android应用进行调试和查看
+            "stetho"                    : "com.facebook.stetho:stetho:${dependVersion.stetho}",
+            "stetho-okhttp3"            : "com.facebook.stetho:stetho-okhttp3:${dependVersion.stetho}",
+            //android ui调试工具
+            "sak-autopilot"             : "com.wanjian:sak-autopilot:0.3.0",
+
+            /*****************************性能优化************************************/
+            //卡顿检测
+            "blockcanary-android"       : "com.github.markzhai:blockcanary-android:${dependVersion.blockcanary}",
+            "blockcanary-no-op"         : "com.github.markzhai:blockcanary-no-op:${dependVersion.blockcanary}",
+
+            //内存泄漏
+            "leakcanary-android"        : "com.squareup.leakcanary:leakcanary-android:${dependVersion.leakcanary}",
+            "leakcanary-android-no-op"  : "com.squareup.leakcanary:leakcanary-android-no-op:${dependVersion.leakcanary}",
 
             //组件化依赖
             "arouter-api"               : "com.alibaba:arouter-api:1.3.1",
             "arouter-compiler"          : "com.alibaba:arouter-compiler:1.1.4",
 
-            //ui调试框架
-            "sak-autopilot"             : "com.wanjian:sak-autopilot:0.3.0",
-            //bmob相关  bmob-sdk  数据存储相关
+            /********************************三方SDK***************************************/
+            //友盟
+            "umeng-analytics"           : "com.umeng.umsdk:analytics:7.5.4",
+            "umeng-common"              : "com.umeng.umsdk:common:1.5.4",
+            //高德地图
+            "amp3d"                     : "com.amap.api:3dmap:5.0.0",
+            "ampLoaction"               : "com.amap.api:location:3.3.0",
+            "ampSearch"                 : "com.amap.api:search:5.0.0",
+            //微信
+            "wechatsdk"                 : "com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.4.0",
+            //极光推送
+            "jpush"                     : "cn.jiguang.sdk:jpush:3.1.6",
+            "jcore"                     : "cn.jiguang.sdk:jcore:1.2.5",
+            "JPUSH_HUAWEI_PUSH"         : "cn.jiguang.sdk.plugin:huawei:3.0.9",
+            //热更新
+            "bugly"                     : "com.tencent.bugly:crashreport_upgrade:1.3.4",
+            //移动后端云服务平台：bmob相关  bmob-sdk  数据存储相关
             "bmob-push"                 : "cn.bmob.android:bmob-push:1.0.2",
             "bmob-sdk"                  : "cn.bmob.android:bmob-sdk:3.6.8-rc4"
 

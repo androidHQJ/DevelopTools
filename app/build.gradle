@@ -12,12 +12,12 @@ android {
 //        multiDexEnabled true
         ndk { abiFilters "armeabi-v7a" }
 
-//       arouter需要配置
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
+////       arouter需要配置
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [moduleName: project.getName()]
+//            }
+//        }
     }
 
     signingConfigs {

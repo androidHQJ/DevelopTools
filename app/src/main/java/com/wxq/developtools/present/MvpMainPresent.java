@@ -11,6 +11,7 @@ public class MvpMainPresent extends RxPresenter<MvpMainContract.View> implements
 
     public MvpMainPresent(MvpMainContract.View view) {
         super(view);
+
     }
 
     @Override

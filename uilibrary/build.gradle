@@ -30,9 +30,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.deps["flowlayout"]
-    api rootProject.ext.deps["photoview"]
-    api rootProject.ext.deps["nineoldandroids"]
     api rootProject.ext.deps["BRVAH"]
     api rootProject.ext.deps["recyclerview-animators"]
     api rootProject.ext.deps["banner"]
