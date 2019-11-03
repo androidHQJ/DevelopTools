@@ -22,7 +22,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -30,11 +30,5 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.deps["BRVAH"]
-    api rootProject.ext.deps["recyclerview-animators"]
-    api rootProject.ext.deps["banner"]
-    api rootProject.ext.deps["ultraviewpager"]
-    //glide
-    annotationProcessor rootProject.ext.deps["glide-compiler"]
     api project(':commonlibrary')
 }
