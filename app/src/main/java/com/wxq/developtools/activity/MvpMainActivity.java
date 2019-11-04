@@ -6,7 +6,7 @@ import android.os.Looper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.hqj.uilibrary.recycleview.itemdecoration.LinearItemDecoration;
-import com.hqj.uilibrary.refreshlayout.SwipeRefreshRecycleView;
+import com.hqj.uilibrary.refreshlayout.swiperefresh.SwipeRefreshRecycleView;
 import com.wxq.commonlibrary.base.BaseActivity;
 import com.wxq.commonlibrary.baserx.Event;
 import com.wxq.developtools.R;
@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MvpMainActivity extends BaseActivity<MvpMainContract.Presenter> implements MvpMainContract.View {
 

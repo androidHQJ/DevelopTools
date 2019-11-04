@@ -1,4 +1,4 @@
-package com.hqj.uilibrary.refreshlayout;
+package com.hqj.uilibrary.refreshlayout.swiperefresh;
 
 import com.chad.library.adapter.base.loadmore.LoadMoreView;
 import com.hqj.uilibrary.R;

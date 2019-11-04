@@ -1,4 +1,4 @@
-package com.hqj.uilibrary.refreshlayout;
+package com.hqj.uilibrary.refreshlayout.swiperefresh;
 
 
 import android.content.Context;
