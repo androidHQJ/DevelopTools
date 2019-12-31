@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/common_baseStyle">
-        <activity android:name=".activity.MvpMainActivity"
+        <activity android:name=".activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             >
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-    <activity android:name=".activity.MainActivity"
+    <activity android:name=".activity.MvpMainActivity"
             android:screenOrientation="portrait"/>
     </application>
 

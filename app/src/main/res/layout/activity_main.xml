@@ -18,6 +18,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"/>
 
+    <com.hqj.uilibrary.textview.CountdownView
+        android:id="@+id/countDownView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/common_black"
+        android:layout_marginTop="10dp"
+        android:text="99s跳过"/>
+
+    <!--自动完成文本框-->
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/auto_complete_text_view"
+        android:layout_marginTop="10dp"
+        android:completionThreshold="1"/>
+
     <com.tmall.ultraviewpager.UltraViewPager
         android:id="@+id/ultra_viewpager"
         android:layout_width="match_parent"

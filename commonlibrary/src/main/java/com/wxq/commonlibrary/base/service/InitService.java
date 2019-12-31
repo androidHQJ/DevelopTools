@@ -1,4 +1,4 @@
-package com.wxq.commonlibrary.base;
+package com.wxq.commonlibrary.base.service;
 
 import android.app.IntentService;
 import android.content.Intent;

@@ -2,6 +2,7 @@
 package com.wxq.commonlibrary.http.common;
 
 import com.wxq.commonlibrary.constant.GlobalContent;
+import com.wxq.commonlibrary.http.customProxy.CustomProxy;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -65,7 +66,29 @@ public class Api {
 
     // 根据类型获取不同的service
     public <T> T getApiService(Class<T> tClass) {
-        return retrofit.create(tClass);
+        return create(tClass);
+    }
+
+    /**
+     * 获取对应的 Service
+     */
+    <T> T create(Class<T> service) {
+        // Retrofit 的代理
+        T retrofitProxy = retrofit.create(service);
+        //再添加一层自定义的代理。
+        T customProxy = addCustomProxy(retrofitProxy);
+        //返回这个嵌套的代理
+        return customProxy;
+    }
+
+    /**
+     * 嵌套添加动态代理
+     * @param target 被代理的对象
+     * @return 返回嵌套动态代理之后的对象
+     */
+    private  <T> T addCustomProxy(T target) {
+        CustomProxy customProxy = new CustomProxy();
+        return (T) customProxy.newProxy(target);
     }
 
 }
